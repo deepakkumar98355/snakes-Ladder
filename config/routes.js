@@ -1,7 +1,6 @@
-exports['default'] = {
-  routes: (api) => {
+exports["default"] = {
+  routes: api => {
     return {
-
       /* ---------------------
       routes.js
 
@@ -9,24 +8,17 @@ exports['default'] = {
       If the client doesn't specify and action in a param, and the base route isn't a named action, the action will attempt to be discerned from this routes.js file.
 
       Learn more here: http://www.actionherojs.com/docs/#routes
-
-      examples:
+      */
 
       get: [
-        { path: '/users', action: 'usersList' }, // (GET) /api/users
-        { path: '/search/:term/limit/:limit/offset/:offset', action: 'search' }, // (GET) /api/search/car/limit/10/offset/100
+        { path: "/getplayer/:empId", action: "getplayer" } // (GET) /api/getplayer
       ],
 
       post: [
-        { path: '/login/:userID(^\\d{3}$)', action: 'login' } // (POST) /api/login/123
-      ],
-
-      all: [
-        { path: '/user/:userID', action: 'user', matchTrailingPathParts: true } // (*) /api/user/123, api/user/123/stuff
+        { path: "/createplayer", action: "createplayer" }, // (POST) /api/users
+        { path: "/updateplayer", action: "updateplayer" }, // (POST) /api/updateplayer
+        { path: "/archiveplayer", action: "archiveplayer" } // (POST) /api/archiveplayer
       ]
-
-      ---------------------- */
-
-    }
+    };
   }
-}
+};
