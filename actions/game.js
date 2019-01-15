@@ -68,32 +68,17 @@ exports.rollDice = class MyAction extends ActionHero.Action {
 
   async run(data) {
     try {
-      const playerModel = api.player;
-      let finalResult;
-
-      //update the player's dice rolled count this should asynchronous
-      playerModel.update({
-        playerId: data.connection.params.playerid,
-        dicerolledcount: player[0].dicerolledcount + 1
-      });
-
-      //get the latest player object
-      const player = await playerModel.get({
-        _id: data.connection.params.playerid
-      });
-
-      let currentPosition = player[0].currentposition;
-
+      let outcome;
       //will call helper function to get the dice outcome
-      finalResult = await game.generateNumber(
-        currentPosition,
-        data.connection.params.playerid
-      );
-
-      data.response.result = {
-        result: "success",
-        finalResult
-      };
+      outcome = await game.generateNumber(data.connection.params.playerid);
+      if (outcome.currentposition === 100) {
+        data.response = {
+          result: "success",
+          message: `*** Hurray player ${outcome.fullname} wins **** `
+        };
+      } else {
+        this.generateNumber(data.connection.params.playerid);
+      }
     } catch (err) {
       data.response.error = err;
     }
