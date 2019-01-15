@@ -44,7 +44,7 @@ node js , java
 #game play<br />
 > players can join an active game room using 'joinGame'<br />
 > players will use 'rollDice' to get the dice outcomes<br />
-> players will use 'rollDice' to get the dice outcomes<br />
+
 
 ##Testing
 > test cases will check if the payloads sent to createplayer is valid or not
