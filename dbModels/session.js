@@ -1,15 +1,15 @@
 exports.init = function(mongoose, con) {
   let Schema = mongoose.Schema;
+  const sessionAttendeesSchema = new Schema({
+    playerName: String,
+    player_id: String
+  });
   let snakesLadderSchema = new Schema(
     {
-      sessionAttendees: {
-        type: String
-      },
-
+      sessionAttendees: sessionAttendeesSchema,
       sessionName: {
         type: String
-      },
-      sessionTime: { type: Date, default: Date.now }
+      }
     },
     {
       timestamps: true

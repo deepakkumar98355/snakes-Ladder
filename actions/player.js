@@ -7,7 +7,7 @@ exports.createplayer = class MyAction extends ActionHero.Action {
   constructor() {
     super();
     this.name = "createplayer";
-    this.description = "Create player";
+    this.description = "will create a player here";
     this.outputExample = {};
 
     this.inputs = {
@@ -42,7 +42,7 @@ exports.playerSignIn = class MyAction extends ActionHero.Action {
   constructor() {
     super();
     this.name = "playerSignIn";
-    this.description = "playerSignIn";
+    this.description = "player can sign in using this api";
     this.outputExample = {};
     this.inputs = {
       email: {
@@ -58,25 +58,26 @@ exports.playerSignIn = class MyAction extends ActionHero.Action {
     try {
       const playerModel = api.player;
       const jwt = api.jwt;
+      //getting latest player object
       const players = await playerModel.get({
         email: data.connection.params.email
       });
       if (players && players.length > 0) {
         const player = players[0];
-
+        //compare the hashed passwords o/p will be either true or false
         const result = await bcrypt.compare(
           data.connection.params.password,
           player.password
         );
 
         if (result) {
-          // generate tokenData
+          // generate tokenData using sha256 as jwt
           jwt.generateToken(
             {
               _id: player._id,
               type: player.type
             },
-            // { expiresIn: '4h' },
+            { expiresIn: "4h" }, //token will expire in 4 hours
             (err, token) => {
               if (token) {
                 const playerDetail = {
@@ -120,7 +121,7 @@ exports.updatePlayer = class MyAction extends ActionHero.Action {
   constructor() {
     super();
     this.name = "updateplayer";
-    this.description = "Update player";
+    this.description = "Update player details using this api";
     this.outputExample = {};
     this.inputs = {
       playerId: {

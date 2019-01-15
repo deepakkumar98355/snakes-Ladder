@@ -32,6 +32,18 @@ exports.init = function(mongoose, con) {
       photoURL: {
         type: String
       },
+      currentposition: {
+        type: Number,
+        default: 0
+      },
+      dicerolledcount: {
+        type: Number,
+        default: 0
+      },
+      sessionId: {
+        type: Schema.Types.ObjectId,
+        ref: "session"
+      },
       updatedDate: { type: Date, default: Date.now }
     },
     {
@@ -60,6 +72,7 @@ exports.init = function(mongoose, con) {
     if (object.name) player.name = object.name;
     if (object.phone) player.phone = object.phone;
     if (object.email) player.email = object.email;
+    if (object.type) player.type = object.type;
     if (object.type) player.type = object.type;
 
     if (object.password) {

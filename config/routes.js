@@ -15,9 +15,12 @@ exports["default"] = {
       ],
 
       post: [
-        { path: "/createplayer", action: "createplayer" }, // (POST) /api/users
-        { path: "/updateplayer", action: "updateplayer" }, // (POST) /api/updateplayer
-        { path: "/archiveplayer", action: "archiveplayer" } // (POST) /api/archiveplayer
+        { path: "/createplayer", action: "createplayer" },
+        { path: "/playerSignIn", action: "playerSignIn" },
+        { path: "/updateplayer", action: "updateplayer" },
+        { path: "/createSession", action: "createSession" },
+        { path: "/rollDice", action: "rollDice" },
+        { path: "/joinGame", action: "joinGame" }
       ]
     };
   }

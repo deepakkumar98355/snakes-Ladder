@@ -1,7 +1,6 @@
 "use strict";
 const ActionHero = require("actionhero");
 const mongoose = require("mongoose");
-const mysql = require("mysql");
 //load all the Schema files
 
 let playerSchema = require("../dbModels/player");
