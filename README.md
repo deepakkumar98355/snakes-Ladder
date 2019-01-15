@@ -26,6 +26,11 @@ use the below steps to get started
 
 node js , java
 
+## Assumptions
+> Player UI - An intreactive UI for players to signIn,LogIn and update profile details<br />
+> Session UI - This will have details for active open sessions that a player can join<br />
+> Game UI - Once player enters the game will have a game UI where player can start playing<br />
+
 ## Usage Guide
 
 #player<br />
@@ -55,6 +60,9 @@ node js , java
 ## Versioning
 
 v1.0
+
+## Further Enhancement
+- for responsiveness and smooth UI intreaction cache mechanism like redis can used to enhance the gameplay . 
 
 ## Authors
 
