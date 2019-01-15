@@ -29,20 +29,20 @@ node js , java
 ## Usage Guide
 
 #player<br />
-#player will sign in using 'createplayer' api endpoint<br />
-#player will log in using 'playerSignIn' api endpoint<br />
-#player can update info using 'updatePlayer' api endpoint<br />
+> player will sign in using 'createplayer' api endpoint<br />
+> player will log in using 'playerSignIn' api endpoint<br />
+> player can update info using 'updatePlayer' api endpoint<br />
 
 #game<br />
-#game start with creating a session using 'createSession' api endpoint<br />
+> game start with creating a session using 'createSession' api endpoint<br />
 
 #game play<br />
-#players can join an active game room using 'joinGame'<br />
-#players will use 'rollDice' to get the dice outcomes<br />
-#players will use 'rollDice' to get the dice outcomes<br />
+> players can join an active game room using 'joinGame'<br />
+> players will use 'rollDice' to get the dice outcomes<br />
+> players will use 'rollDice' to get the dice outcomes<br />
 
 ##Testing
-#test cases will check if the payloads sent to createplayer is valid or not
+> test cases will check if the payloads sent to createplayer is valid or not
 
 ![Optional Text](../master/public/architecture.png)
 
