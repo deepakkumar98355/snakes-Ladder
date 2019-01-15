@@ -1,6 +1,6 @@
 # Project Title
 
-Snakes And Ladder Backend
+Snakes And Ladder Game using Node js and mongo DB  
 
 ## Getting Started
 
@@ -29,27 +29,28 @@ node js , java
 ## Usage Guide
 
 #player
--- player will sign in using 'createplayer' api endpoint
--- player will log in using 'playerSignIn' api endpoint
--- player can update info using 'updatePlayer' api endpoint
+#player will sign in using 'createplayer' api endpoint
+#player will log in using 'playerSignIn' api endpoint
+#player can update info using 'updatePlayer' api endpoint
 
 #game
--- game start with creating a session using 'createSession' api endpoint
+#game start with creating a session using 'createSession' api endpoint
 
 #game play
--- players can join an active game room using 'joinGame'
--- players will use 'rollDice' to get the dice outcomes
--- players will use 'rollDice' to get the dice outcomes
+#players can join an active game room using 'joinGame'
+#players will use 'rollDice' to get the dice outcomes
+#players will use 'rollDice' to get the dice outcomes
 
 ##Testing
--- test cases will check if the payloads sent to createplayer is valid or not
+#test cases will check if the payloads sent to createplayer is valid or not
 
 ![Optional Text](../master/public/architecture.png)
 
 ## Built With
 
-- (https://nodejs.org)
+- (https://nodejs.org) (framework)
 - (https://www.actionherojs.com/)
+- (https://mlab.com/) (DB handler)
 
 ## Versioning
 
